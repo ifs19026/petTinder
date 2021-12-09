@@ -1,3 +1,16 @@
+<h1>Anggota Kelompok 6:</h1>
+<ol>
+    <li>Hans Mayson P. Situmeang (11S19002)</li>
+    <li>Rafelli Simangunsong (11S19003)</li>
+    <li>Elisa Claudia Tinambunan (11S19026)</li>
+    <li>Yuan H. Siagian (11S19030)</li>
+    <li>Hotmangasi Manurung (11S19034)</li>
+    <li>Rivaldo Gabriel S (11S19041)</li>
+    <li>Hanna Suryani Simarmata (11S19063)</li>
+</ol>
+<h2>PetTinder</h2>
+<p>Aplikasi berbasis web petTinder ini merupakan sebuah aplikasi berbasis web yang menyediakan fitur adopsi hewan. Pada aplikasi ini terdapat beberapa fitur yang memungkinkan user untuk melakukan adopsi hewan, ataupun menambahkan hewan baru agar dapat di adopsi.</p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

@@ -1,2 +1,0 @@
-
-<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\KULIAH2\application\petTinder\resources\views/adopt.blade.php ENDPATH**/ ?>

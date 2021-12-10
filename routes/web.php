@@ -27,6 +27,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
+
 // Route::get('/dogList', function () {
 //     return view('dogList');
 // });

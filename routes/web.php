@@ -54,7 +54,7 @@ Route::get('add', [AdoptionController::class, 'create']);
 
 Route::get('/adoption/store', [AdoptionController::class, 'store']);
 
-Route::get('/dogList', [AdoptionController::class, 'show']);
+Route::get('/dogList', [AdoptionController::class, 'show'])->name('dogList');
 
 Route::get('/adoption/edit/{id}', [AdoptionController::class, 'edit']);
 

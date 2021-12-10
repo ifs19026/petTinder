@@ -13,7 +13,7 @@
                             <h2 class="title">Dog List</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Dog List</li>
                                 </ol>
                             </nav>
@@ -40,18 +40,19 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @foreach ($adoption as $adopt)
                     <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">
-                                <img src="img/product/adoption_shop_thumb01.jpg" alt="">
-                                <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
+                                <img src="img/{{ $adopt->image }}" alt="">
+                                <a href="{{ routes('dog-details', $adoption->id) }}" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
                             </div>
                             <div class="adoption-shop-content">
-                                <h4 class="title"><a href="shop-details.html">Mister Tartosh</a></h4>
+                                <h4 class="title"><a href="/dog-details">{{ $adopt->name }}</a></h4>
                                 <div class="adoption-meta">
                                     <ul>
-                                        <li><i class="fas fa-cog"></i><a href="#">Siberian Husky</a></li>
-                                        <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
+                                        <li><i class="fas fa-cog"></i><a href="#">{{ $adopt->breed }}</a></li>
+                                        <li><i class="far fa-calendar-alt"></i> Age : {{ $adopt->age }}</li>
                                     </ul>
                                 </div>
                                 <div class="adoption-rating">
@@ -63,13 +64,14 @@
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </li>
-                                        <li class="price">Full Vaccinated</li>
+                                        <li class="price">Weight: {{ $adopt->weight }}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    {{-- <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">
                                 <img src="img/product/adoption_shop_thumb02.jpg" alt="">
@@ -126,8 +128,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
+                    </div> --}}
+                    {{-- <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">
                                 <img src="img/product/adoption_shop_thumb04.jpg" alt="">
@@ -213,7 +215,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

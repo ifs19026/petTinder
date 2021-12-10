@@ -14,7 +14,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Update</li>
                                 </ol>
                             </nav>
                         </div>
@@ -31,7 +31,7 @@
                 <div class="row justify-content-center justify-content-lg-between">
                     <div class="col-lg-6 col-md-8 order-2 order-lg-0">
                         <div class="contact-title mb-20">
-                            <h2 class="title">Add adoptable friend<span>.</span></h2>
+                            <h2 class="title">Updata data adoptable friend<span>.</span></h2>
                         </div>
                         <div class="contact-wrap-content">
                             <p>Add puppy, kitten, and other friends to find new forever home.</p>
@@ -47,40 +47,42 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('adoption.store') }}" method="POST" class="contact-form" enctype="multipart/form-data">
+                            <form action="{{ route('adoption.update', $adoption->name) }}" method="POST" class="contact-form" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
 
                                 <div class="form-grp">
                                     <label for="name">Name <span>*</span></label>
-                                    <input type="text" name="name" placeholder="Jhon Doe...">
+                                    <input type="text" name="name" value="{{ $adoption->name }}" placeholder="Jhon Doe...">
                                 </div>
                                 <div class="form-grp">
                                     <label for="age">Age <span>*</span></label>
-                                    <input type="text" name="age" placeholder="1 month">
+                                    <input type="text" name="age" placeholder="1 month" value="{{ $adoption->age }}">
                                 </div>
                                 <div class="form-grp">
                                     <label for="breed">Breed <span>*</span></label>
-                                    <input type="text" name="breed" placeholder="Corgy..">
+                                    <input type="text" name="breed" placeholder="Corgy.." value="{{ $adoption->breed }}">
                                 </div>
                                 <div class="form-grp">
                                     <label for="breed">Color <span>*</span></label>
-                                    <input type="text" name="color" placeholder="Black..">
+                                    <input type="text" name="color" placeholder="Black.." value="{{ $adoption->color }}">
                                 </div>
                                 <div class="form-grp">
                                     <label for="breed">Weight <span>*</span></label>
-                                    <input type="text" name="weight" placeholder="25kg">
+                                    <input type="text" name="weight" placeholder="25kg" value="{{ $adoption->weight }}">
                                 </div>
                                 <div class="form-grp">
                                     <label for="breed">Gender <span>*</span></label>
-                                    <input type="text" name="gender" placeholder="male">
+                                    <input type="text" name="gender" placeholder="male" value="{{ $adoption->gender }}">
                                 </div>
                                 <div class="form-grp">
                                     <label for="message">About </label>
-                                    <textarea id="message" name="detail" placeholder="details.."></textarea>
+                                    <textarea id="message" name="detail" placeholder="details..">{{ $adoption->detail }}</textarea>
                                 </div>
                                 <div class="form-grp">
                                     <label for="file">Add Image</label>
                                     <input type="file" name="image" placeholder="image" required>
+                                    <img src="/image/{{ $adoption->image }}">
                                 </div>
                                 <button type="submit" value="send" class="btn rounded-btn">Add</button>
                             </form>

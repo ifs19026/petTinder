@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\AdoptionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,9 +27,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/dogList', function () {
-    return view('dogList');
-});
+// Route::get('/dogList', function () {
+//     return view('dogList');
+// });
 
 Route::get('/contacs', function () {
     return view('contacs');
@@ -47,3 +47,18 @@ Route::get('/dog-details', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('adoption', AdoptionController::class);
+
+Route::get('add', [AdoptionController::class, 'create']);
+
+Route::get('/adoption/store', [AdoptionController::class, 'store']);
+
+Route::get('/dogList', [AdoptionController::class, 'show']);
+
+Route::get('/adoption/edit/{id}', [AdoptionController::class, 'edit']);
+
+Route::get('/adoption/update/{id}', [AdoptionController::class, 'update']);
+
+Route::get('/adoption/delete/{id}', [AdoptionController::class, 'destroy']);
+

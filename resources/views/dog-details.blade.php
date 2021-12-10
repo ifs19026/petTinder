@@ -13,7 +13,7 @@
                             <h2 class="title">Breeder Details</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Breeder Single</li>
                                 </ol>
                             </nav>
@@ -30,12 +30,9 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="breeder-details-content">
-                            <h4 class="title">Siberian Husky</h4>
-                            <p>The domestic dog is a doiated dendant of the wolf. The dog t is derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nesdarest living relative. The dog was the first species to be domesticated, by
-                            hunter???gateiherers. These will include the core vaccines, which are in a series of three: at 6-, 12-, and 16 weeks old.</p>
-                            <p>The dog was the first species to be domesticated, by hunter???gateiherers. These will include and the modern grey wolf is the dog's.</p>
+                            <h4 class="title">{{ $adoption->name }}</h4>
                             <div class="breeder-details-img">
-                                <img src="img/images/breeder_details.jpg" alt="">
+                                <img src="/image/{{ $adoption->image }}" alt="">
                             </div>
                             <h4 class="title">About Bio</h4>
                             <p>The domestic dog is doiated dendant of the wolf. The dog t is derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nesdarest living relative. The dog was the first species to be dometed, by hunter.</p>
@@ -45,37 +42,31 @@
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Gender:</h6>
-                                            <span>Male</span>
+                                            <span>{{ $adoption->gender }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Age:</h6>
-                                            <span>1 year</span>
+                                            <span>{{ $adoption->age }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Color:</h6>
-                                            <span>White</span>
+                                            <span>{{ $adoption->color }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Pet ID:</h6>
-                                            <span>09481</span>
+                                            <span>{{ $adoption->id }})</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
-                                            <h6>Size:</h6>
-                                            <span>Med. 26-60 lbs</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-4 col-6">
-                                        <div class="breeder-info-item">
-                                            <h6>Gender:</h6>
-                                            <span>Male</span>
+                                            <h6>Weight:</h6>
+                                            <span>{{ $adoption->weight }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
@@ -87,11 +78,18 @@
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Breed:</h6>
-                                            <span>Husky</span>
+                                            <span>{{ $adoption->breed }}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="btn">Adopt Now<img src="img/icon/w_pawprint.png" alt=""></a>
+
+                                <form action="{{ route('adoption.destroy', $adoption->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn">Adopt Now <img src="img/icon/w_pawprint.png" alt=""></button>
+                                </form>
+
+                                <button class="btn" type="submit"><a href="{{ route('adoption.edit', $adoption->id) }}"></a> Update<img src="img/icon/w_pawprint.png" alt=""></button>
                             </div>
                         </div>
                     </div>

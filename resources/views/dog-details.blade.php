@@ -5,16 +5,16 @@
      <main>
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb-area breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+        <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('/img/bg/breadcrumb_bg.jpg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h2 class="title">Breeder Details</h2>
+                            <h2 class="title">Pet Details</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Breeder Single</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Pet Single</li>
                                 </ol>
                             </nav>
                         </div>
@@ -35,7 +35,7 @@
                                 <img src="/image/{{ $adoption->image }}" alt="">
                             </div>
                             <h4 class="title">About Bio</h4>
-                            <p>The domestic dog is doiated dendant of the wolf. The dog t is derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nesdarest living relative. The dog was the first species to be dometed, by hunter.</p>
+                            <p>{{ $adoption->detail }}.</p>
                             <div class="breeder-dog-info">
                                 <h5 class="title">Dog Information</h5>
                                 <div class="row">
@@ -60,7 +60,7 @@
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>Pet ID:</h6>
-                                            <span>{{ $adoption->id }})</span>
+                                            <span>{{ $adoption->id }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
@@ -72,7 +72,7 @@
                                     <div class="col-md-3 col-sm-4 col-6">
                                         <div class="breeder-info-item">
                                             <h6>City:</h6>
-                                            <span>New York</span>
+                                            <span>Sumatera Utara</span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4 col-6">
@@ -89,7 +89,7 @@
                                     <button type="submit" class="btn">Adopt Now <img src="img/icon/w_pawprint.png" alt=""></button>
                                 </form>
 
-                                <button class="btn" type="submit"><a href="{{ route('adoption.edit', $adoption->id) }}"></a> Update<img src="img/icon/w_pawprint.png" alt=""></button>
+                                <a class="btn" href="/adoption/{{ $adoption->id }}/edit"> Update</a>
                             </div>
                         </div>
                     </div>

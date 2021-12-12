@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdoptionController;
+use App\Models\Adoption;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +16,7 @@ use App\Http\Controllers\AdoptionController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/adoption', function () {
     return view('adoption');
@@ -28,37 +27,39 @@ Route::get('/about', function () {
 });
 
 // Route::get('/dogList', function () {
-//     return view('dogList');
+//     return view('dogList', $data);
 // });
 
 Route::get('/contacs', function () {
     return view('contacs');
 });
 
-Route::get('/add', function () {
-    return view('add');
-});
+// Route::get('/add', function () {
+//     return view('add');
+// });
 
-Route::get('/dog-details', function () {
-    return view('dog-details');
-});
+// Route::get('/dog-details', function () {
+//     return view('dog-details');
+// });
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('adoption', AdoptionController::class);
 
-Route::get('add', [AdoptionController::class, 'create']);
 
-Route::get('/adoption/store', [AdoptionController::class, 'store']);
+Route::get('/add', [AdoptionController::class, 'create']);
 
-Route::get('/dogList', [AdoptionController::class, 'show']);
+Route::post('/adoption/store', [AdoptionController::class, 'store']);
+
+Route::get('/dog-details/{adoption:id}', [AdoptionController::class, 'show'])->name('dog.details');
+
+Route::get('/dogList', [AdoptionController::class, 'showAll']);
 
 Route::get('/adoption/edit/{id}', [AdoptionController::class, 'edit']);
 
-Route::get('/adoption/update/{id}', [AdoptionController::class, 'update']);
+// Route::put('/adoption/update/{adoption:id}', [AdoptionController::class, 'update']);
 
 Route::get('/adoption/delete/{id}', [AdoptionController::class, 'destroy']);
-
+Route::resource('/adoption', AdoptionController::class);

@@ -22,19 +22,19 @@
 
 
 		<!-- style here -->
-        <link rel="stylesheet" href="style/bootstrap.min.css">
-        <link rel="stylesheet" href="style/animate.min.css">
-        <link rel="stylesheet" href="style/magnific-popup.css">
-        <link rel="stylesheet" href="style/fontawesome-all.min.css">
-        <link rel="stylesheet" href="style/owl.carousel.min.style">
-        <link rel="stylesheet" href="style/nice-select.css">
-        <link rel="stylesheet" href="style/flaticon.css">
-        <link rel="stylesheet" href="style/odometer.css">
-        <link rel="stylesheet" href="style/jquery-ui.css">
-        <link rel="stylesheet" href="style/slick.css">
-        <link rel="stylesheet" href="style/default.css">
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/responsive.css">
+        <link rel="stylesheet" href="{{ asset('style/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/owl.carousel.min.style') }}">
+        <link rel="stylesheet" href="{{ asset('style/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/odometer.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     </head>
@@ -42,7 +42,7 @@
 
         <!-- Preloader -->
         <div id="preloader">
-            <img src="img/preloader.gif" alt="">
+            <img src="{{ asset('img/preloader.gif') }}" alt="">
         </div>
         <!-- Preloader-end -->
 
@@ -61,7 +61,7 @@
                             <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                             <div class="menu-wrap">
                                 <nav class="menu-nav show">
-                                    <div class="logo"><a href="/home"><img src="img/logo/logo.png" alt=""></a></div>
+                                    <div class="logo"><a href="/home"><img src="{{ asset('img/logo/logo.png') }}" alt=""></a></div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
                                             <li><a href="/">Home</a></li>
@@ -85,13 +85,13 @@
                                                     @guest
                                                         @if (Route::has('login'))
                                                             <li class="header-btn">
-                                                                <a class="btn" href="{{ route('login') }}">{{ __('Login') }} <img src="img/icon/w_pawprint.png" alt=""></a>
+                                                                <a class="btn" href="{{ route('login') }}">{{ __('Login') }} <img src="{{ asset('img/icon/w_pawprint.png') }}" alt=""></a>
                                                             </li>
                                                         @endif
                             
                                                         @if (Route::has('register'))
                                                             <li class="header-btn">
-                                                                <a class="btn" href="{{ route('register') }}">{{ __('Register') }} <img src="img/icon/w_pawprint.png" alt=""></a>
+                                                                <a class="btn" href="{{ route('register') }}">{{ __('Register') }} <img src="{{ asset('img/icon/w_pawprint.png') }}" alt=""></a>
                                                             </li>
                                                         @endif
                                                     @else
@@ -107,7 +107,7 @@
                                                                    onclick="event.preventDefault();
                                                                                  document.getElementById('logout-form').submit();">
                                                                     {{ __('Logout') }}
-                                                                    <img src="img/icon/w_pawprint.png" alt="">
+                                                                    <img src="{{ asset('img/icon/w_pawprint.png') }}" alt="">
                                                                 </a>
                             
                                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -123,7 +123,7 @@
                             <div class="mobile-menu">
                                 <nav class="menu-box">
                                     <div class="close-btn"><i class="fas fa-times"></i></div>
-                                    <div class="nav-logo"><a href="/home"><img src="img/logo/logo.png" alt="" title=""></a>
+                                    <div class="nav-logo"><a href="/home"><img src="{{ asset('img/logo/logo.png') }}" alt="" title=""></a>
                                     </div>
                                     <div class="menu-outer">
                                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="header-shape" data-background="img/bg/header_shape.png"></div>
+                <div class="header-shape" data-background="{{ asset('img/bg/header_shape.png') }}"></div>
             </div>
             <!-- header-search -->
             <div class="search-popup-wrap" tabindex="-1" role="dialog" aria-hidden="true">
@@ -180,7 +180,7 @@
                 <div class="col-3">
                     <div class="footer-widget">
                         <div class="f-logo">
-                            <a href="/home"><img src="img/logo/logo.png" alt=""></a>
+                            <a href="/home"><img src="{{ asset('img/logo/logo.png') }}" alt=""></a>
                         </div>
                         <div class="footer-text">
                             <p>Find your forerver best friend.</p>
@@ -239,20 +239,20 @@
                         <h4 class="fw-title">Instagram</h4>
                         <div class="fw-insta">
                             <ul>
-                                <li><a href="#"><img src="img/images/insta_img01.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img02.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img03.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img04.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img05.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/images/insta_img06.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img01.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img02.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img03.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img04.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img05.png') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('img/images/insta_img06.png') }}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-shape"><img src="img/images/footer_shape01.png" alt=""></div>
-        <div class="footer-shape shape-two"><img src="img/images/footer_shape02.png" alt=""></div>
+        <div class="footer-shape"><img src="{{ asset('img/images/footer_shape01.png') }}" alt=""></div>
+        <div class="footer-shape shape-two"><img src="{{ asset('img/images/footer_shape02.png') }}" alt=""></div>
     </div>
     <div class="copyright-area">
         <div class="container">
@@ -267,12 +267,12 @@
                         <div class="dropdown">
                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="img/icon/united-states.png" alt=""> English
+                                <img src="{{  asset('img/icon/united-states.png')  }}" alt=""> English
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <a class="dropdown-item" href="/home"><img src="img/icon/russia.png" alt="">Bahasa</a>
-                                <a class="dropdown-item" href="/home"><img src="img/icon/thailand.png" alt="">Melayu</a>
-                                <a class="dropdown-item" href="/home"><img src="img/icon/india.png" alt="">India</a>
+                                <a class="dropdown-item" href="/home"><img src="{{ asset('img/icon/russia.png') }}" alt="">Bahasa</a>
+                                <a class="dropdown-item" href="/home"><img src="{{ asset('img/icon/thailand.png') }}" alt="">Melayu</a>
+                                <a class="dropdown-item" href="/home"><img src="{{ asset('img/icon/india.png') }}" alt="">India</a>
                             </div>
                         </div>
                     </div>
@@ -288,20 +288,20 @@
 
 
 <!-- JS here -->
-<script src="js/vendor/jquery-3.6.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.odometer.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/jquery.odometer.min.js') }}"></script>
+<script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('js/jquery.appear.js') }}"></script>
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/wow.min.js') }}"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 

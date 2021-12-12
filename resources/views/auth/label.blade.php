@@ -22,19 +22,19 @@
 
 
 		<!-- style here -->
-        <link rel="stylesheet" href="style/bootstrap.min.css">
-        <link rel="stylesheet" href="style/animate.min.css">
-        <link rel="stylesheet" href="style/magnific-popup.css">
-        <link rel="stylesheet" href="style/fontawesome-all.min.css">
-        <link rel="stylesheet" href="style/owl.carousel.min.style">
-        <link rel="stylesheet" href="style/nice-select.css">
-        <link rel="stylesheet" href="style/flaticon.css">
-        <link rel="stylesheet" href="style/odometer.css">
-        <link rel="stylesheet" href="style/jquery-ui.css">
-        <link rel="stylesheet" href="style/slick.css">
-        <link rel="stylesheet" href="style/default.css">
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/responsive.css">
+        <link rel="stylesheet" href="{{ asset('style/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/owl.carousel.min.style') }}">
+        <link rel="stylesheet" href="{{ asset('style/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/odometer.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <style>
@@ -59,19 +59,19 @@
         <!-- Preloader-end -->
 
         <!-- JS here -->
-        <script src="js/vendor/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.odometer.min.js"></script>
-        <script src="js/jquery.nice-select.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/jquery.appear.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.odometer.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.appear.js') }}"></script>
+        <script src="{{ asset('js/slick.min.js') }}"></script>
+        <script src="{{ asset('js/wow.min.js') }}"></script>
+        <script src="{{ asset('js/plugins.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
 
         @yield('content')

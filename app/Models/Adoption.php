@@ -15,8 +15,8 @@ class Adoption extends Model
         'breed', 
         'color', 
         'weight', 
-        'detail', 
-        'image', 
-        'gender'
+        'detail',
+        'gender',
+        'image'
     ];
 }

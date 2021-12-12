@@ -16,6 +16,11 @@
                                     <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Adoption</li>
                                 </ol>
+                                <br><br>
+
+                                <div class="col-xl-5 col-lg-7 col-md-10">
+                                    <a href="/add" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">Add Friends List<img src="img/icon/w_pawprint.png" alt=""></a>
+                                </div>
                             </nav>
                         </div>
                     </div>
@@ -23,7 +28,6 @@
             </div>
         </section>
         <!-- breadcrumb-area-end -->
-
         <!-- adoption-area -->
         <section class="adoption-area-two pt-110 pb-110">
             <div class="container">

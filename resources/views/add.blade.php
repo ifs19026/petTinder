@@ -13,7 +13,7 @@
                             <h2 class="title">Add Friends List</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Add</li>
                                 </ol>
                             </nav>
@@ -47,7 +47,7 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('adoption.store') }}" method="POST" class="contact-form" enctype="multipart/form-data">
+                            <form action="/adoption/store" method="POST" class="contact-form" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-grp">
@@ -79,7 +79,7 @@
                                     <textarea id="message" name="detail" placeholder="details.."></textarea>
                                 </div>
                                 <div class="form-grp">
-                                    <label for="file">Add Image</label>
+                                    <label for="file">Add Image <span>*</span></label>
                                     <input type="file" name="image" placeholder="image" required>
                                 </div>
                                 <button type="submit" value="send" class="btn rounded-btn">Add</button>

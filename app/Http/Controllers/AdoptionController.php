@@ -16,8 +16,8 @@ class AdoptionController extends Controller
     {
         $adoption = Adoption::latest()->paginate(10);
 
-        return view('add',compact('adoption'))
-        ->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('adoption', compact('adoption'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -44,33 +44,32 @@ class AdoptionController extends Controller
             'breed' => 'required',
             'color' => 'required',
             'weight' => 'required',
-            'age' => 'required',
+            'gender' => 'required',
             'detail' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-       Adoption::create([
-            'name' => $request -> name,
-            'age' => $request ->age,
-            'breed' => $request -> breed,
-            'color' => $request -> color,
-            'weight' => $request -> weight,
-            'age' => $request -> age,
-            'detail' => $request -> detail
-       ]);
-  
+        $adoption = Adoption::create([
+            'name' => $request->name,
+            'age' => $request->age,
+            'breed' => $request->breed,
+            'color' => $request->color,
+            'weight' => $request->weight,
+            'gender' => $request->gender,
+            'detail' => $request->detail
+        ]);
+
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+            $adoption->image = "$profileImage";
         }
-    
-        Adoption::create($input);
-     
-        return redirect()->route('dogList')
-                        ->with('success','Adoptabable list created successfully.');
-    
+
+        $adoption->save();
+
+        return redirect('dogList')
+            ->with('success', 'Adoptabable list created successfully.');
     }
 
     /**
@@ -81,7 +80,19 @@ class AdoptionController extends Controller
      */
     public function show(Adoption $adoption)
     {
-        return view('dog-details',compact('adoption'));
+        return view('dog-details', [
+            'title' => 'ADOPTION',
+            'adoption' => $adoption
+        ]);
+    }
+
+    public function showAll()
+    {
+
+        return view('dogList', [
+            "title" => "MIFILM- Daftar Film",
+            "adoption" => Adoption::latest()->get()
+        ]);
     }
 
     /**
@@ -92,7 +103,7 @@ class AdoptionController extends Controller
      */
     public function edit(Adoption $adoption)
     {
-        return view('edit',compact('adoption'));
+        return view('edit', compact('adoption'));
     }
 
     /**
@@ -102,8 +113,9 @@ class AdoptionController extends Controller
      * @param  \App\Models\Adoption  $adoption
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Adoption $adoption)
+    public function update(Request $request, $id)
     {
+
         $request->validate([
             'name' => 'required',
             'age' => 'required',
@@ -113,23 +125,24 @@ class AdoptionController extends Controller
             'age' => 'required',
             'detail' => 'required',
         ]);
-  
+
+        $adoption = Adoption::findOrFail($id);
+
         $input = $request->all();
-  
+
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else{
+        } else {
             unset($input['image']);
         }
-          
+
         $adoption->update($input);
-    
-        return redirect()->route('dogList')
-                        ->with('success','adoptable list updated successfully');
-    
+
+        return redirect()->route('dog.details', $adoption->id)
+            ->with('success', 'adoptable list updated successfully');
     }
 
     /**
@@ -138,11 +151,12 @@ class AdoptionController extends Controller
      * @param  \App\Models\Adoption  $adoption
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Adoption $adoption)
+    public function destroy($id)
     {
+        $adoption = Adoption::find($id);
         $adoption->delete();
 
-        return redirect()->route('dogList')
-                        ->with('success','adoptable list deleted successfully');
+        return redirect()->route('adoption.index')
+            ->with('success', 'adoptable list deleted successfully');
     }
 }

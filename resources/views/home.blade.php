@@ -18,7 +18,7 @@
                                 <div class="slider-desc">
                                     <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s">Human Shampoo on Dogs After six days of delirat, the jury found Hernandez guilty of first-degree murder</p>
                                 </div>
-                                <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
+                                <a href="/dogList" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                                 <div class="slider-desc">
                                     <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s">Human Shampoo on Dogs After six days of delirat, the jury found Hernandez guilty of first-degree murder</p>
                                 </div>
-                                <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
+                                <a href="/dogList" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">View More <img src="img/icon/w_pawprint.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -286,178 +286,36 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb01.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Mister Tartosh</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">Siberian Husky</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                </ul>
+                @foreach ($adoption as $data)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="adoption-shop-item">
+                            <div class="adoption-shop-thumb">
+                                <img src="/image/{{ $data->image }}" alt="">
+                                <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
                             </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb02.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Charlie</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">Golden Retriever</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Birth : 2020</li>
-                                </ul>
-                            </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                </ul>
+                            <div class="adoption-shop-content">
+                                <h4 class="title"><a href="/adoption">{{ $data->name }}</a></h4>
+                                <div class="adoption-meta">
+                                    <ul>
+                                        <li><i class="fas fa-cog"></i><a href="#">{{ $data->breed }}</a></li>
+                                        <li><i class="far fa-calendar-alt"></i> Age : {{ $data->age }}</li>
+                                    </ul>
+                                </div>
+                                <div class="adoption-rating">
+                                    <ul>
+                                        <li class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb03.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Alessia Max</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">German Sherped</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Birth : 2020</li>
-                                </ul>
-                            </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb04.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Canadian</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">German Sherped</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Age : 1 month</li>
-                                </ul>
-                            </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb05.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Entertainment</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">Siberian Husky</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                </ul>
-                            </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="adoption-shop-item">
-                        <div class="adoption-shop-thumb">
-                            <img src="img/product/adoption_shop_thumb06.jpg" alt="">
-                            <a href="/adoption" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
-                        </div>
-                        <div class="adoption-shop-content">
-                            <h4 class="title"><a href="/adoption">Dangerous</a></h4>
-                            <div class="adoption-meta">
-                                <ul>
-                                    <li><i class="fas fa-cog"></i><a href="#">Golden Retriever</a></li>
-                                    <li><i class="far fa-calendar-alt"></i> Birth : 2021</li>
-                                </ul>
-                            </div>
-                            <div class="adoption-rating">
-                                <ul>
-                                    <li class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

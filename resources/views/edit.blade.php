@@ -13,7 +13,7 @@
                             <h2 class="title">Add Friends List</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Update</li>
                                 </ol>
                             </nav>
@@ -47,7 +47,7 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('adoption.update', $adoption->name) }}" method="POST" class="contact-form" enctype="multipart/form-data">
+                            <form action="/adoption/{{ $adoption->id }}" method="POST" class="contact-form" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -82,9 +82,9 @@
                                 <div class="form-grp">
                                     <label for="file">Add Image</label>
                                     <input type="file" name="image" placeholder="image" required>
-                                    <img src="/image/{{ $adoption->image }}">
+                                    <img src="{{ asset('/image/') }}/{{ $adoption->image }}">
                                 </div>
-                                <button type="submit" value="send" class="btn rounded-btn">Add</button>
+                                <button type="submit" value="send" class="btn rounded-btn">Update</button>
                             </form>
                         </div>
                     </div>

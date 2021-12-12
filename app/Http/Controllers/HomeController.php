@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adoption;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $adoption = Adoption::latest()->paginate(10);
+        return view('home')->with('adoption', $adoption);
     }
 }

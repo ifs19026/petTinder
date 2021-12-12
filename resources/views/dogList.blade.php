@@ -44,8 +44,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">
-                                <img src="img/{{ $adopt->image }}" alt="">
-                                <a href="{{ routes('dog-details', $adoption->id) }}" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
+                                <img src="image/{{ $adopt->image }}" alt="">
+                                <a href="/dog-details/{{ $adopt->id }}" class="btn">Adoption <img src="img/icon/w_pawprint.png" alt=""></a>
                             </div>
                             <div class="adoption-shop-content">
                                 <h4 class="title"><a href="/dog-details">{{ $adopt->name }}</a></h4>
@@ -69,8 +69,8 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                     </div>
+                    @endforeach
                     {{-- <div class="col-lg-4 col-md-6">
                         <div class="adoption-shop-item">
                             <div class="adoption-shop-thumb">

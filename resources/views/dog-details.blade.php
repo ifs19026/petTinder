@@ -10,11 +10,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h2 class="title">Breeder Details</h2>
+                            <h2 class="title">Pet Details</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Breeder Single</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Pet Single</li>
                                 </ol>
                             </nav>
                         </div>
@@ -88,8 +88,7 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn">Adopt Now <img src="img/icon/w_pawprint.png" alt=""></button>
                                 </form>
-
-                                <button class="btn" type="submit"><a href="{{ route('adoption.edit', $adoption->id) }}"></a> Update<img src="img/icon/w_pawprint.png" alt=""></button>
+                                <a class="btn" href="/adoption/{{ $adoption->id }}/edit"> Update</a>
                             </div>
                         </div>
                     </div>
